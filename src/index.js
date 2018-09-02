@@ -1,3 +1,3 @@
-const Arcentry = {};
+import Arcentry from './client';
 
 export default Arcentry;
