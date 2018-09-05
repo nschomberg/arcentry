@@ -4,11 +4,11 @@ import DocumentModel from './models/document';
 import ObjectModel from './models/object';
 
 const Client = class {
-  constructor({ apiToken }) {
-    if (!apiToken) {
+  constructor({ apiKey }) {
+    if (!apiKey) {
       throw new Error('Missing or invalid options');
     }
-    this._apiToken = apiToken;
+    this._apiKey = apiKey;
     this._cache = {};
   }
 
@@ -18,7 +18,7 @@ const Client = class {
         baseURL: 'https://arcentry.com/api/v1'
       });
 
-      client.defaults.headers.common['Authorization'] = `Bearer ${this.apiToken}`;
+      client.defaults.headers.common['Authorization'] = `Bearer ${this.apiKey}`;
       client.defaults.headers.common['Content-Type'] = 'application/json';
 
       this._cache.client = client;
@@ -27,8 +27,8 @@ const Client = class {
     return this._cache.client;
   }
 
-  get apiToken() {
-    return this._apiToken;
+  get apiKey() {
+    return this._apiKey;
   }
 
   get document() {
