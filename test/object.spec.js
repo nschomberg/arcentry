@@ -93,9 +93,22 @@ describe('Object', () => {
   });
 
   describe('updateWhere', () => {
-    it('should throw error', () => {
-      expect(() => subject.object.updateWhere()).to.throw('Not implemented yet.');
+    beforeEach(() => {
+      mock
+        .onPost('/doc/<my-doc-id>/obj/where', {
+          props: { text: 'my-text ' },
+          selector: ['key', 'co', 'value']
+        })
+        .reply(200, 'success-response');
+      promise = subject.object.updateWhere('<my-doc-id>', ['key', 'co', 'value'], {
+        props: { text: 'my-text ' }
+      });
     });
+
+    it('should send out the right request', () =>
+      promise.then(res => {
+        expect(res.data).to.equal('success-response');
+      }));
   });
 
   describe('delete', () => {
