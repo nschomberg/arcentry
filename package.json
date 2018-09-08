@@ -1,6 +1,6 @@
 {
   "name": "arcentry",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Javascript wrapper for Arcentry API.",
   "main": "lib/arcentry.js",
   "scripts": {

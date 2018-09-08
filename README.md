@@ -26,7 +26,6 @@ arcentry.document
   .catch(err => console.error(err));
 
 // Get a document by id (https://arcentry.com/api-docs/#get-details-for-a-document
-  get(documentId) {)
 arcentry.document
   .get('<document-id>')
   .then(documents => console.log(documents))
