@@ -61,9 +61,17 @@ arcentry.object
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 
-// Query objects by selector (https://arcentry.com/api-docs/meta-data/#how-to-search-for-metadata)
+// Query objects by selector (https://arcentry.com/api-docs/#retrieve-objects-by-selector)
 arcentry.object
-  .getWhere('<document-id>', selector)
+  .getWhere('<document-id>', ['some-key', 'eq', 'a-certain-value'])
+  .then(objects => console.log(objects))
+  .catch(err => console.error(err));
+
+// Updating objects matched by selector (https://arcentry.com/api-docs/#update-multiple-objects-matching-a-selector)
+arcentry.object
+  .updateWhere('<document-id>', ['some-key', 'no', 'a-certain-value'], {
+    props: { primaryColor: '#FF0000' }
+  })
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 ```

@@ -21,7 +21,7 @@ const ObjectModel = class {
     return this.client.get(`/doc/${documentId}/obj/${objectId}`);
   }
 
-  // https://arcentry.com/api-docs/meta-data/#how-to-search-for-metadata
+  // https://arcentry.com/api-docs/#retrieve-objects-by-selector
   getWhere(documentId, selector) {
     return this.client.get(
       `/doc/${documentId}/obj/where/${ObjectModel.generateSelector(selector)}`
@@ -38,12 +38,10 @@ const ObjectModel = class {
     return this.client.post(`/doc/${documentId}/obj/${objectId}`, body);
   }
 
-  // https://arcentry.com/api-docs/meta-data/#how-to-search-for-metadata
-  /* eslint-disable class-methods-use-this, no-unused-vars */
+  // https://arcentry.com/api-docs/#update-multiple-objects-matching-a-selector
   updateWhere(documentId, selector, body) {
-    throw new Error('Not implemented yet.');
+    return this.client.post(`/doc/${documentId}/obj/where`, { ...body, selector });
   }
-  /* eslint-enable */
 
   // https://arcentry.com/api-docs/#delete-an-object
   delete(documentId, objectId) {
