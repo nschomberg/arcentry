@@ -19,33 +19,52 @@ const arcentry = new Arcentry({
   apiKey: 'your-api-key'
 });
 
+// Get a list of all documents (https://arcentry.com/api-docs/#list-all-documents)
 arcentry.document
   .list()
   .then(documents => console.log(documents))
   .catch(err => console.error(err));
 
+// Get a document by id (https://arcentry.com/api-docs/#get-details-for-a-document
+  get(documentId) {)
 arcentry.document
   .get('<document-id>')
   .then(documents => console.log(documents))
   .catch(err => console.error(err));
 
+// Get a list of all objects in a document (https://arcentry.com/api-docs/#list-all-objects-for-a-document)
 arcentry.object
   .list('<document-id>')
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 
+// Get an object by id (https://arcentry.com/api-docs/#get-properties-for-an-object)
 arcentry.object
   .get('<document-id>', '<object-id>')
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 
+// Create an object (https://arcentry.com/api-docs/#create-a-new-object)
+arcentry.object
+  .create('<document-id>', { props: { text: 'My Object' } })
+  .then(objects => console.log(objects))
+  .catch(err => console.error(err));
+
+// Update an object (https://arcentry.com/api-docs/#set-properties-for-an-object)
 arcentry.object
   .update('<document-id>', '<object-id>', { props: { text: 'Updated text' } })
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 
+// Delete an object (https://arcentry.com/api-docs/#delete-an-object)
 arcentry.object
   .delete('<document-id>', '<object-id>')
+  .then(objects => console.log(objects))
+  .catch(err => console.error(err));
+
+// Query objects by selector (https://arcentry.com/api-docs/meta-data/#how-to-search-for-metadata)
+arcentry.object
+  .getWhere('<document-id>', selector)
   .then(objects => console.log(objects))
   .catch(err => console.error(err));
 ```
@@ -83,6 +102,14 @@ const arcentry = new Arcentry({
   apiKey: 'your-api-key'
 });
 ```
+
+### `arcentry.document`
+
+TBD
+
+### `arcentry.object`
+
+TBD
 
 ## Running Project Locally
 

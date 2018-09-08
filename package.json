@@ -15,9 +15,10 @@
     "url": "https://github.com/nschomberg/arcentry.git"
   },
   "keywords": [
-    "webpack",
+    "arcentry",
+    "api",
+    "axios",
     "es6",
-    "starter",
     "library",
     "universal",
     "umd",
@@ -33,6 +34,7 @@
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0",
+    "axios-mock-adapter": "^1.15.0",
     "babel-eslint": "^8.0.3",
     "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-add-module-exports": "^0.2.1",

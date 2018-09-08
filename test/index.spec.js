@@ -1,22 +1,25 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import Arcentry from '../lib/arcentry';
+import Arcentry from '../src';
+import Client from '../src/client';
 
 chai.expect();
 
 const { expect } = chai;
 
-let lib;
+let subject;
 
-describe('Given an instance of my Arcentry library', () => {
+describe('Arcentry', () => {
   before(() => {
-    lib = Arcentry;
+    subject = new Arcentry({
+      apiKey: 'my-key'
+    });
   });
 
-  describe('when I need the name', () => {
-    it('should return the name', () => {
-      expect(lib).to.deep.equal({});
+  context('when instantiated', () => {
+    it('should be an instance of client', () => {
+      expect(subject).to.be.an.instanceof(Client);
     });
   });
 });

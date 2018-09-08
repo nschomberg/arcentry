@@ -1,4 +1,4 @@
-const Document = class {
+const DocumentModel = class {
   constructor(client) {
     this._client = client;
   }
@@ -18,4 +18,4 @@ const Document = class {
   }
 };
 
-export default Document;
+export default DocumentModel;

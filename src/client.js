@@ -18,7 +18,7 @@ const Client = class {
         baseURL: 'https://arcentry.com/api/v1'
       });
 
-      client.defaults.headers.common['Authorization'] = `Bearer ${this.apiKey}`;
+      client.defaults.headers.common.Authorization = `Bearer ${this.apiKey}`;
       client.defaults.headers.common['Content-Type'] = 'application/json';
 
       this._cache.client = client;
