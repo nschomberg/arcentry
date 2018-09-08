@@ -8,7 +8,8 @@
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-register --colors -w ./test/*.spec.js",
-    "prettier": "prettier --config prettier.config.js *.js *.json"
+    "prettier": "prettier --config prettier.config.js *.js *.json",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
