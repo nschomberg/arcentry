@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+
+  "globals": {
+    "document": false,
+    "escape": false,
+    "navigator": false,
+    "unescape": false,
+    "window": false
+  },
+
+  "parser": "babel-eslint",
+
+  "plugins": [],
+  "rules": {
+    "no-underscore-dangle": 0
+  }
+}
