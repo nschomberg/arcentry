@@ -2,7 +2,7 @@
 
 Javascript wrapper for Arcentry API.
 
-![Travis](https://travis-ci.org/nschomberg/arcentry.svg?branch=master)
+![Travis](https://api.travis-ci.com/nschomberg/arcentry.svg?branch=master)
 
 ## Installation
 
